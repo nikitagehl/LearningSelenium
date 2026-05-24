@@ -14,7 +14,7 @@ public class Practice_31_Dec_Main extends Exception {
         WebDriver driver = new EdgeDriver();
         driver.get("https://www.idrive360.com/enterprise/login");
 
-        Thread.sleep(5000);
+        Thread.sleep(15000);
 
         WebElement input_email = driver.findElement(By.xpath("//input[@name=\"username\"]"));
         input_email.sendKeys("augtest_040823@idrive.com");
@@ -22,17 +22,17 @@ public class Practice_31_Dec_Main extends Exception {
         WebElement pass= driver.findElement(By.id("password"));
         pass.sendKeys("123456");
 
-//        WebElement Check_box = driver.findElement(By.id("id-checkmark"));
-//        Check_box.click();
+        WebElement Check_box = driver.findElement(By.className("id-checkmark"));
+        Check_box.click();
 
         WebElement button = driver.findElement(By.id("frm-btn"));
         button.click();
 
-        Thread.sleep(6000);
+        Thread.sleep(15000);
 
-//        WebElement error_message_free_trial = driver.findElement(By.xpath("//h5[@class=\"id-card-title\"]"));
-//        Assert.assertEquals(error_message_free_trial.getText(),"Your free trial has expired");
-//        Thread.sleep(6000);
+        WebElement error_message_free_trial = driver.findElement(By.xpath("//h5[@class=\"id-card-title\"]"));
+        Assert.assertEquals(error_message_free_trial.getText(),"Your free trial has expired");
+        Thread.sleep(6000);
         driver.close();
 
     }
